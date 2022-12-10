@@ -21,7 +21,24 @@ for (i = -15; i < 15; i++) {
     }
 }
 
-document.addEventListener("mousemove", function(e) {
+document.addEventListener("pointermove", function(e) {
+    moveFocus(e);
+    dragScreen(e);
+})
+
+
+
+document.addEventListener("pointerdown", function(e) {
+    grab(e);
+})
+
+document.addEventListener("pointerup", function(e) {
+    ungrab(e);
+})
+
+
+
+moveFocus = function (e) {
     nodes.forEach((node, index) => {
         const distance = Math.sqrt(Math.pow(e.x - node[0], 2) + Math.pow(e.y - node[1], 2));
         let size = 100 - Math.pow(distance, 2)/5000;
@@ -36,21 +53,9 @@ document.addEventListener("mousemove", function(e) {
         currentNode.style.left = node[0] - size/2 + Math.pow(size, 2) * (node[0] - e.x) / 10000 + "px";
         currentNode.style.top = node[1] - size/2 + Math.pow(size, 2) * (node[1] - e.y) / 10000 + "px";
     });
-})
+}
 
-document.addEventListener("mousedown", function(e) {
-    document.body.style.cursor = "grabbing";
-    oldX = e.x;
-    oldY = e.y;
-    mousedown = 1;
-})
-
-document.addEventListener("mouseup", function(e) {
-    document.body.style.cursor = "";
-    mousedown = 0;
-})
-
-document.addEventListener("mousemove", function(e) {
+dragScreen = function (e) {
     if(mousedown == 1){
         console.log(oldX + " | " + oldY);
         nodes.forEach(node => {
@@ -60,4 +65,16 @@ document.addEventListener("mousemove", function(e) {
         oldX = e.x;
         oldY = e.y;
     }
-})
+}
+
+grab = function (e) {
+    document.body.style.cursor = "grabbing";
+    oldX = e.x;
+    oldY = e.y;
+    mousedown = 1;
+}
+
+ungrab = function (e) {
+    document.body.style.cursor = "";
+    mousedown = 0;
+}
