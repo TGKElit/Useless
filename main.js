@@ -79,6 +79,7 @@ dragScreen = function (e) {
 }
 
 grab = function (e) {
+    e.preventDefault();
     document.body.style.cursor = "grabbing";
     oldX = e.x;
     oldY = e.y;
@@ -86,6 +87,7 @@ grab = function (e) {
 }
 
 ungrab = function (e) {
+    e.preventDefault();
     document.body.style.cursor = "";
     mousedown = 0;
 }
