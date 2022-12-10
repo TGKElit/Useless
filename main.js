@@ -66,6 +66,7 @@ moveFocus = function (e) {
 }
 
 dragScreen = function (e) {
+    e.preventDefault();
     if(mousedown == 1){
         console.log(oldX + " | " + oldY);
         nodes.forEach(node => {
