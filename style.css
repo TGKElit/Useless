@@ -1,0 +1,21 @@
+body {
+    cursor: grab;
+    width: 100vw;
+    height: 100vw;
+    background-color: #55a;
+}
+
+.node {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    position: fixed;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 0px;
+    background-color: aqua;
+}
+
+.node:hover {
+    background-color: aquamarine;
+}
