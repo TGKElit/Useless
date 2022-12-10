@@ -5,8 +5,8 @@ let oldX;
 let oldY;
 let mousedown = 0;
 
-for (i = -40; i < 40; i++) {
-    for (j = -40; j < 40; j++) {
+for (i = -15; i < 15; i++) {
+    for (j = -15; j < 15; j++) {
         if(Math.random() < 0.7) {
             const x = (i * 100) + Math.random() * 50;
             const y = (j * 100) + Math.random() * 50;
