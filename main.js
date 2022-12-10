@@ -40,8 +40,18 @@ document.addEventListener("pointerup", function(e) {
 
 moveFocus = function (e) {
     nodes.forEach((node, index) => {
-        const distance = Math.sqrt(Math.pow(e.x - node[0], 2) + Math.pow(e.y - node[1], 2));
-        let size = 100 - Math.pow(distance, 2)/5000;
+        let distance;
+        let xDistance;
+        let yDistance;
+        if (window.innerWidth > 750) {
+            xDistance = node[0] - e.x;
+            yDistance = node[1] - e.y;
+        } else {
+            xDistance = node[0] - innerWidth/2;
+            yDistance = node[1] - innerHeight/2;
+        }
+        distance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+        let size = 100 - Math.pow(distance, 2) / (2 * innerWidth);
         if (size < 0) {
             size = 0;
         }
@@ -50,8 +60,8 @@ moveFocus = function (e) {
         currentNode.style.height = size + "px";
         currentNode.style.borderWidth = size/40 + "px";
         currentNode.style.zIndex = Math.round(size);
-        currentNode.style.left = node[0] - size/2 + Math.pow(size, 2) * (node[0] - e.x) / 10000 + "px";
-        currentNode.style.top = node[1] - size/2 + Math.pow(size, 2) * (node[1] - e.y) / 10000 + "px";
+        currentNode.style.left = node[0] - size/2 + Math.pow(size, 2) * (xDistance) / 10000 + "px";
+        currentNode.style.top = node[1] - size/2 + Math.pow(size, 2) * (yDistance) / 10000 + "px";
     });
 }
 
