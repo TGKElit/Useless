@@ -1,8 +1,8 @@
 INSERT MANDATORY GIF
 
-# Project Title
+# Useless Graph
 
-Text about the project. This would also be a great place to link the game on Netlify.
+useless-graph.netlify.com
 
 # Installation
 
