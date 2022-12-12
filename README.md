@@ -2,7 +2,7 @@ INSERT MANDATORY GIF
 
 # Useless Graph
 
-useless-graph.netlify.com
+https://useless-graph.netlify.com
 
 # Installation
 
