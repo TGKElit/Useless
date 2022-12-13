@@ -30,6 +30,7 @@ function nodeGenerator() {
         oldNodes[0].parentNode.removeChild(oldNodes[0]);
     }
     nodes = [];
+    indexCounter = 0;
     for (i = -Math.sqrt(nodeNumber)/2; i < Math.sqrt(nodeNumber)/2; i++) {
         for (j = -Math.sqrt(nodeNumber)/2; j < Math.sqrt(nodeNumber)/2; j++) {
             if(Math.random() < 0.7) {
@@ -47,6 +48,7 @@ function nodeGenerator() {
         }
     }
     pictureId = Math.floor(Math.random()*nodes.length);
+    console.log(pictureId);
     pictureNode = document.getElementById("node" + pictureId);
     pictureNode.classList.add("picture-node");
     picture = pictureNode.appendChild(document.createElement("img"));
