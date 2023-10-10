@@ -1,12 +1,7 @@
-INSERT MANDATORY GIF
-
 # Useless Graph
 
 https://useless-graph.netlify.com
 
-# Installation
-
-Add the installation instructions.
 
 # Code Review
 
@@ -17,10 +12,3 @@ Add the installation instructions.
 5. Allmänt - Trevlig, avancerad hemsida. Mycket snygg visuellt, särskilt "grab"-funktionen. Hade varit enklare att läsa med lite kommentarer.
 
 Code review - Petter Jakobsson - https://github.com/jaken92
-
-# Testers
-
-Tested by the following people:
-
-1. Jane Doe
-2. John Doe
